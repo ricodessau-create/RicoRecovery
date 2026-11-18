@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/RicoRecovery.Core/RicoRecovery.Core.csproj" />
+    <Project Path="src/RicoRecovery.Storage/RicoRecovery.Storage.csproj" />
+    <Project Path="src/RicoRecovery.FileSystems/RicoRecovery.FileSystems.csproj" />
+    <Project Path="src/RicoRecovery.Recovery/RicoRecovery.Recovery.csproj" />
+    <Project Path="src/RicoRecovery.Infrastructure/RicoRecovery.Infrastructure.csproj" />
+    <Project Path="src/RicoRecovery.App/RicoRecovery.App.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/RicoRecovery.Tests/RicoRecovery.Tests.csproj" />
+  </Folder>
+</Solution>
