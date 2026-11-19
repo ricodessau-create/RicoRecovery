@@ -4,5 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\RicoRecovery.Core\RicoRecovery.Core.csproj" />
+    <ProjectReference Include="..\RicoRecovery.Storage\RicoRecovery.Storage.csproj" />
+    <ProjectReference Include="..\RicoRecovery.FileSystems\RicoRecovery.FileSystems.csproj" />
   </ItemGroup>
 </Project>
