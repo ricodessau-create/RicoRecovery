@@ -48,7 +48,7 @@ internal static class DiskImageBuilder
             Guid.NewGuid().TryWriteBytes(span.Slice(16, 16));
             BinaryPrimitives.WriteInt64LittleEndian(span[32..], partitions[index].FirstLba);
             BinaryPrimitives.WriteInt64LittleEndian(span[40..], partitions[index].LastLba);
-            Encoding.Unicode.GetBytes(partitions[index].Name).CopyTo(span[56..]);
+            Encoding.Unicode.GetBytes(partitions[index].Name).AsSpan().CopyTo(span[56..]);
         }
 
         var entriesCrc = Crc32.Compute(entries);
@@ -69,7 +69,7 @@ internal static class DiskImageBuilder
         var offset = (int)(headerLba * SectorSize);
         var span = image.AsSpan(offset, 92);
 
-        Encoding.ASCII.GetBytes("EFI PART").CopyTo(span);
+        Encoding.ASCII.GetBytes("EFI PART").AsSpan().CopyTo(span);
         BinaryPrimitives.WriteUInt32LittleEndian(span[8..], 0x00010000);
         BinaryPrimitives.WriteUInt32LittleEndian(span[12..], 92);
         BinaryPrimitives.WriteInt64LittleEndian(span[24..], currentLba);
