@@ -96,7 +96,7 @@ internal sealed class NtfsImageBuilder
         var value = new byte[66 + name.Length * 2];
         var time = new DateTimeOffset(2024, 5, 17, 12, 30, 10, TimeSpan.Zero).ToFileTime();
 
-        ImageWriter.U64(value, 0, parent | (1L << 48));
+        ImageWriter.U64(value, 0, (uint)parent | (1L << 48));
         ImageWriter.U64(value, 8, time);
         ImageWriter.U64(value, 16, time);
         ImageWriter.U64(value, 24, time);
